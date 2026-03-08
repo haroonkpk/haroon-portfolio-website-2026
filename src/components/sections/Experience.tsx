@@ -77,10 +77,7 @@ export default function Experience() {
           </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={graphInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        <div
           className="w-full overflow-hidden"
         >
           <Image
@@ -90,7 +87,7 @@ export default function Experience() {
             height={200}
             className="w-full h-auto"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
