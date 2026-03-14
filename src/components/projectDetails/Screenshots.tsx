@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
 
 const PLACEHOLDER_IMG = "/images/projects/placeholder.webp";
@@ -14,22 +13,16 @@ interface Props {
 function ScreenshotImage({
   src,
   alt,
-  delay,
 }: {
   src: string;
   alt: string;
   delay: number;
 }) {
   const [imgSrc, setImgSrc] = useState(src);
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 32 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay }}
+    <div
+    
       className="w-full"
     >
       <Image
@@ -42,7 +35,7 @@ function ScreenshotImage({
         loading="lazy"
         onError={() => setImgSrc(PLACEHOLDER_IMG)}
       />
-    </motion.div>
+    </div>
   );
 }
 
