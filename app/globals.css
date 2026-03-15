@@ -1,26 +1,158 @@
 @import "tailwindcss";
-
+/* ============================================
+   DESIGN TOKENS — change here, changes everywhere
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+  /* --- Core Colors --- */
+  --color-black:        #0f0f0f;   /* primary dark bg */
+  --color-black-soft:   #1a1a1a;   /* cards, text on light bg */
+  --color-white:        #ffffff;   /* pure white */
+  --color-cream:        #F5F0E8;   /* primary light bg */
+  --color-cream-dark:   #e8e4dc;   /* borders, dividers on cream */
+
+  /* --- Gray Scale (Nivea bottle inspired) --- */
+  --color-gray-light:   #f0ede6;   /* subtle section bg */
+  --color-gray-mid:     #8a8a8a;   /* muted text, icons */
+  --color-gray-warm:    #c4bfb5;   /* borders on dark bg */
+
+  /* --- Text Colors --- */
+  --color-text-primary:   #0f0f0f;   /* on cream/white bg */
+  --color-text-secondary: #1a1a1a;   /* slightly lighter */
+  --color-text-muted:     #8a8a8a;   /* captions, labels */
+  --color-text-inverse:   #F5F0E8;   /* on black bg */
+  --color-text-inverse-muted: #c4bfb5; /* muted text on black bg */
+
+  /* --- Background Colors --- */
+  --color-bg-primary:   #F5F0E8;   /* main page bg (cream) */
+  --color-bg-dark:      #0f0f0f;   /* dark sections */
+  --color-bg-card:      #ffffff;   /* cards on cream */
+  --color-bg-card-dark: #1a1a1a;   /* cards on dark bg */
+
+  /* --- Border Colors --- */
+  --color-border-light: #e8e4dc;   /* on cream bg */
+  --color-border-dark:  #2a2a2a;   /* on black bg */
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  /* System font stack — fast, no external load */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial,
+    sans-serif;
+
+  --font-mono:
+    "SF Mono", "Fira Code", "Fira Mono",
+    "Roboto Mono", monospace;
+
+  /* Font sizes */
+  --text-xs:   0.75rem;    /* 12px — labels */
+  --text-sm:   0.875rem;   /* 14px — captions */
+  --text-base: 1rem;       /* 16px — body */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  2rem;       /* 32px */
+  --text-4xl:  3rem;       /* 48px */
+
+  /* Font weights */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.08em;
+  --tracking-wider:   0.2em;
+
+  /* ============================================
+     SPACING & LAYOUT
+     ============================================ */
+
+  --section-px:     clamp(1.5rem, 5vw, 5rem);   /* horizontal padding */
+  --section-py:     clamp(4rem, 10vh, 8rem);     /* vertical padding */
+  --container-max:  1400px;
+
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+
+  --ease-smooth:  cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:   200ms;
+  --duration-base:   400ms;
+  --duration-slow:   700ms;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================
+   BASE RESET & DEFAULTS
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
+
+/* ============================================
+   REUSABLE UTILITY CLASSES
+   ============================================ */
+
+.section-padding {
+  padding: var(--section-py) var(--section-px);
+}
+
+.container-max {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* Section backgrounds */
+.bg-cream  { background-color: var(--color-cream); }
+.bg-dark   { background-color: var(--color-black); }
+
+/* Divider lines */
+.divider-light {
+  border: none;
+  border-top: 1px solid var(--color-border-light);
+}
+.divider-dark {
+  border: none;
+  border-top: 1px solid var(--color-border-dark);
+}
+
+/* Text on dark background */
+.text-on-dark        { color: var(--color-text-inverse); }
+.text-on-dark-muted  { color: var(--color-text-inverse-muted); }
+
+/* Selection color */
+::selection {
+  background-color: var(--color-black);
+  color: var(--color-cream);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-black-soft); border-radius: 3px; }
