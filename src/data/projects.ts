@@ -18,9 +18,9 @@ export const PROJECTS: Project[] = [
     label: "E-Commerce",
     title: "Full stack ecommerce platform with real-time inventory",
     images: [
-      "/images/projects/dumy.jpeg",
-      "/images/projects/dumy.jpeg",
-      "/images/projects/dumy.jpeg",
+      "/images/projects/11.png",
+      "/images/projects/12.png",
+      "/images/projects/13.png",
     ],
     detail: {
       client: "RetailCo",
@@ -31,8 +31,8 @@ export const PROJECTS: Project[] = [
         "The platform supports thousands of concurrent users with optimized database queries and caching strategies.",
       ],
       screenshots: [
-        "/images/projects/ecommerce/screen1.jpg",
-        "/images/projects/ecommerce/screen2.jpg",
+        "/images/projects/14.png",
+        "/images/projects/15.png",
       ],
     },
   },
@@ -41,9 +41,9 @@ export const PROJECTS: Project[] = [
     label: "SaaS",
     title: "Analytics dashboard for enterprise data visualization",
     images: [
-      "/images/projects/dumy2.jpg",
-      "/images/projects/dumy2.jpg",
-      "/images/projects/dumy2.jpg",
+      "/images/projects/14.png",
+      "/images/projects/15.png",
+      "/images/projects/16.png",
     ],
     detail: {
       client: "DataViz Inc",
@@ -54,8 +54,8 @@ export const PROJECTS: Project[] = [
         "Custom chart components built from scratch for maximum performance and flexibility.",
       ],
       screenshots: [
-        "/images/projects/saas/screen1.jpg",
-        "/images/projects/saas/screen2.jpg",
+        "/images/projects/11.png",
+        "/images/projects/12.png",
       ],
     },
   },
@@ -64,9 +64,9 @@ export const PROJECTS: Project[] = [
     label: "Mobile",
     title: "Cross-platform mobile app for food delivery service",
     images: [
-      "/images/projects/mobile/1.jpg",
-      "/images/projects/mobile/2.jpg",
-      "/images/projects/mobile/3.jpg",
+      "/images/projects/13.png",
+      "/images/projects/dumy.jpeg",
+      "/images/projects/16.png",
     ],
     detail: {
       client: "FoodRush",
@@ -77,8 +77,8 @@ export const PROJECTS: Project[] = [
         "Integrated Google Maps for live delivery tracking with sub-second location updates.",
       ],
       screenshots: [
-        "/images/projects/mobile/screen1.jpg",
-        "/images/projects/mobile/screen2.jpg",
+        "/images/projects/13.png",
+        "/images/projects/15.png",
       ],
     },
   },
@@ -87,9 +87,9 @@ export const PROJECTS: Project[] = [
     label: "CMS",
     title: "Headless CMS with multi-language support",
     images: [
-      "/images/projects/cms/1.jpg",
-      "/images/projects/cms/2.jpg",
-      "/images/projects/cms/3.jpg",
+      "/images/projects/12.png",
+      "/images/projects/dumy.jpeg",
+      "/images/projects/11.png",
     ],
     detail: {
       client: "MediaGroup",
@@ -100,8 +100,8 @@ export const PROJECTS: Project[] = [
         "The platform serves 50k+ monthly visitors with 99.9% uptime using edge caching.",
       ],
       screenshots: [
-        "/images/projects/cms/screen1.jpg",
-        "/images/projects/cms/screen2.jpg",
+        "/images/projects/16.png",
+        "/images/projects/dumy.jpeg",
       ],
     },
   },

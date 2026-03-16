@@ -13,23 +13,12 @@ const revealVariants = {
   },
 } as Variants;
 
-const lineVariants = {
-  hidden: { scaleX: 0 },
-  visible: {
-    scaleX: 1,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-  },
-} as Variants;
-
 export default function Projects() {
-  const headingRef    = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
   const headingInView = useInView(headingRef, { once: true, margin: "-80px" });
 
   return (
-    <section
-      id="projects"
-      style={{ backgroundColor: "var(--color-cream)" }}
-    >
+    <section id="projects" style={{ backgroundColor: "var(--color-cream)" }}>
       {/* ── Section heading ── */}
       <div
         ref={headingRef}
@@ -37,8 +26,6 @@ export default function Projects() {
           padding: "clamp(3rem, 6vw, 5rem) var(--section-px) 0",
         }}
       >
-      
-
         <div className="flex items-end justify-between gap-4 flex-wrap">
           {/* Left — label + heading */}
           <div className="flex flex-col gap-2">
@@ -53,7 +40,7 @@ export default function Projects() {
                   letterSpacing: "var(--tracking-wider)",
                 }}
               >
-                Selected Work
+                projects
               </motion.span>
             </div>
 
@@ -70,7 +57,7 @@ export default function Projects() {
                   lineHeight: 1.1,
                 }}
               >
-                Projects
+                Featured work
               </motion.h2>
             </div>
           </div>

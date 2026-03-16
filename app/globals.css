@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lugrasimo&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fjalla+One&family=Lugrasimo&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 .font-archivo {
   font-family: "Archivo Black", sans-serif;
@@ -118,6 +118,7 @@ html {
 
 body {
  /* font-family: 'Inter', sans-serif; */
+  font-family: "Noto Serif", serif;
   font-size: var(--text-base);
   font-weight: var(--weight-regular);
   background-color: var(--color-bg-primary);

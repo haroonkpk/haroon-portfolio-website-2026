@@ -1,15 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
+import { TransitionContext } from "@/src/lib/TransitionProvider";
 
 const NAV_LINKS = [
-  { label: "Home", sub: "start here", href: "#home" },
-  { label: "Work", sub: "selected projects", href: "#projects" },
-  { label: "About", sub: "who I am", href: "#about" },
-  { label: "Skills", sub: "what I use", href: "#skills" },
-  { label: "Contact", sub: "get in touch", href: "#contact" },
+  { label: "Home", sub: "start here", href: "/" },
+  { label: "Work", sub: "selected projects", href: "/work" },
 ];
 
 // Full screen overlay
@@ -64,6 +62,9 @@ const dividerVariants = {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { navigate } = useContext(TransitionContext) as {
+    navigate: (href: string) => void;
+  };
 
   const close = () => setOpen(false);
 
@@ -163,11 +164,13 @@ export default function Navbar() {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="overflow-hidden"
+                    className="overflow-hidden flex justify-center"
                   >
-                    <Link
-                      href={link.href}
-                      onClick={close}
+                    <button
+                      onClick={() => {
+                        navigate(link.href);
+                        close();
+                      }}
                       className="flex flex-col items-center py-4 group"
                     >
                       <span
@@ -186,7 +189,7 @@ export default function Navbar() {
                       >
                         {link.sub}
                       </span>
-                    </Link>
+                    </button>
                   </motion.div>
                 </div>
               ))}

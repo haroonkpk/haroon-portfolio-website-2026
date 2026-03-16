@@ -167,7 +167,7 @@ export default function Footer() {
             animate={inView ? "visible" : "hidden"}
             className="font-black leading-none w-full text-center "
             style={{
-              fontFamily: '"Archivo Black", sans-serif',
+               fontFamily: '"Archivo Black", sans-serif',
               fontSize: "clamp(4rem, 16vw, 18rem)",
               color: "var(--color-text-primary)",
               letterSpacing: "var(--tracking-tight)",

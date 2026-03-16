@@ -102,7 +102,7 @@ export default function ProjectCard({ project }: Props) {
 
   return (
     <Link
-      href={`/projects/${project.slug}`}
+      href={`/project/${project.slug}`}
       className="block w-full"
       style={{ borderBottom: "1px solid var(--color-cream-dark)" }}
     >
@@ -126,7 +126,7 @@ export default function ProjectCard({ project }: Props) {
                 whileInView={{ y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.75, delay: cfg.delay }}
-                className={`${i === 0 ? "hidden sm:block" : ""} absolute bg-transparent overflow-hidden`}
+                className={`absolute bg-transparent overflow-hidden`}
                 style={{
                   width: `${cfg.widthPercent}%`,
                   left: `${cfg.leftPercent}%`,
@@ -192,6 +192,7 @@ export default function ProjectCard({ project }: Props) {
               className="inline-block text-xs font-medium"
               style={{
                 color: "var(--color-text-muted)",
+                backgroundColor: "var(--color-cream-dark)",
                 borderBottom: "1px solid var(--color-text-muted)",
                 paddingBottom: "2px",
                 letterSpacing: "var(--tracking-wider)",
