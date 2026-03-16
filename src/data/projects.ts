@@ -2,7 +2,7 @@ export interface Project {
   slug: string;
   label: string;
   title: string;
-  images: [string, string, string]; // exactly 3 images
+  images: [string, string, string];
   detail: {
     client: string;
     deliverables: string[];

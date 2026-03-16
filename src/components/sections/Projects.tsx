@@ -37,14 +37,7 @@ export default function Projects() {
           padding: "clamp(3rem, 6vw, 5rem) var(--section-px) 0",
         }}
       >
-        {/* Top divider */}
-        <motion.div
-          variants={lineVariants}
-          initial="hidden"
-          animate={headingInView ? "visible" : "hidden"}
-          className="w-full h-px origin-left mb-8"
-          style={{ backgroundColor: "var(--color-cream-dark)" }}
-        />
+      
 
         <div className="flex items-end justify-between gap-4 flex-wrap">
           {/* Left — label + heading */}
@@ -81,22 +74,6 @@ export default function Projects() {
               </motion.h2>
             </div>
           </div>
-
-          {/* Right — project count */}
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={headingInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="font-black"
-            style={{
-              fontSize: "clamp(3rem, 8vw, 6rem)",
-              color: "var(--color-cream-dark)",
-              letterSpacing: "var(--tracking-tight)",
-              lineHeight: 1,
-            }}
-          >
-            {String(PROJECTS.length).padStart(2, "0")}
-          </motion.span>
         </div>
       </div>
 

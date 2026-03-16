@@ -6,22 +6,24 @@ import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 import { Project } from "@/src/data/projects";
 
-// --- 1. Custom Image Component with Fallback Logic ---
+// --- Custom Image with Fallback ---
 interface FallbackImageProps extends ImageProps {
   fallbackSrc: string;
 }
 
-const FallbackImage = ({ src, fallbackSrc, alt, ...rest }: FallbackImageProps) => {
+const FallbackImage = ({
+  src,
+  fallbackSrc,
+  alt,
+  ...rest
+}: FallbackImageProps) => {
   const [imgSrc, setImgSrc] = useState(src || fallbackSrc);
-
   return (
     <Image
       {...rest}
       src={imgSrc}
       alt={alt}
-      onError={() => {
-        setImgSrc(fallbackSrc);
-      }}
+      onError={() => setImgSrc(fallbackSrc)}
     />
   );
 };
@@ -41,12 +43,33 @@ const revealVariants = {
 } as Variants;
 
 const IMG_CONFIG = [
-  { widthPercent: 52, aspectRatio: "4/3", top: 0, leftPercent: 0, rotate: "-1.5deg", z: 1 },
-  { widthPercent: 40, aspectRatio: "4/3", top: 0, leftPercent: 48, rotate: "1deg", z: 2 },
-  { widthPercent: 34, aspectRatio: "3/4", top: 38, leftPercent: 60, rotate: "-0.8deg", z: 3 },
+  {
+    widthPercent: 48,
+    aspectRatio: "1/1",
+    topPercent: 0,
+    leftPercent: 48,
+    z: 1,
+    delay: 0.05,
+  },
+  {
+    widthPercent: 62,
+    aspectRatio: "16/10",
+    topPercent: 18,
+    leftPercent: 0,
+    z: 3,
+    delay: 0.18,
+  },
+  {
+    widthPercent: 32,
+    aspectRatio: "4/5",
+    topPercent: 45,
+    leftPercent: 56,
+    z: 2,
+    delay: 0.31,
+  },
 ] as const;
 
-export default function ProjectCard({ project, index }: Props) {
+export default function ProjectCard({ project }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -66,7 +89,7 @@ export default function ProjectCard({ project, index }: Props) {
         {/* ── Collage area ── */}
         <div
           className="relative w-full mb-10"
-          style={{ paddingBottom: "48%", minHeight: "260px" }}
+          style={{ paddingBottom: "52%", minHeight: "220px" }}
         >
           {project.images.map((src, i) => {
             const cfg = IMG_CONFIG[i];
@@ -78,27 +101,25 @@ export default function ProjectCard({ project, index }: Props) {
                 transition={{
                   duration: 0.75,
                   ease: [0.16, 1, 0.3, 1],
-                  delay: 0.05 + i * 0.13,
+                  delay: cfg.delay,
                 }}
-                className="absolute overflow-hidden bg-gray-200" 
+                className={`${i === 0 ? "hidden sm:block" : ""} absolute overflow-hidden bg-gray-2001`}
                 style={{
                   width: `${cfg.widthPercent}%`,
                   left: `${cfg.leftPercent}%`,
-                  top: i === 2 ? `${cfg.top}%` : `${cfg.top}px`,
+                  top: `${cfg.topPercent}%`,
                   zIndex: cfg.z,
-                  transform: `rotate(${cfg.rotate})`,
                   aspectRatio: cfg.aspectRatio,
                   boxShadow: "0 4px 24px rgba(0,0,0,0.10)",
                 }}
               >
-                {/* ── Use FallbackImage instead of next/image ── */}
                 <FallbackImage
                   src={src}
-                  fallbackSrc="/images/projects/placeholder.webp" 
+                  fallbackSrc="/images/projects/placeholder.webp"
                   alt={`${project.title} — image ${i + 1}`}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  sizes="(max-width: 768px) 55vw, 45vw"
+                  className="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  sizes="(max-width: 768px) 60vw, 45vw"
                 />
               </motion.div>
             );
@@ -106,8 +127,8 @@ export default function ProjectCard({ project, index }: Props) {
         </div>
 
         {/* ── Text — label + title ── */}
-        <div className="flex flex-col gap-3 w-full">
-          {/* Label with underline */}
+        <div className="flex flex-col gap-3 mt-6! w-full">
+          {/* Label */}
           <div className="overflow-hidden">
             <motion.span
               variants={revealVariants}
@@ -120,21 +141,20 @@ export default function ProjectCard({ project, index }: Props) {
                 textTransform: "uppercase",
               }}
             >
-              {String(index + 1).padStart(2, "0")} &mdash; {project.label}
+              {project.label}
             </motion.span>
           </div>
 
-          {/* Title */}
-          <div className="overflow-hidden">
+          {/* Title — full width mobile, 53% desktop */}
+          <div className="overflow-hidden w-full">
             <motion.h2
               variants={revealVariants}
-              className="font-black w-full transition-opacity duration-300 group-hover:opacity-50"
+              className="font-black transition-opacity duration-300 group-hover:opacity-50 w-full md:max-w-[53%]"
               style={{
                 fontSize: "clamp(1.6rem, 4vw, 3rem)",
                 color: "var(--color-text-primary)",
                 lineHeight: 1.1,
                 letterSpacing: "var(--tracking-tight)",
-                maxWidth: "60%",
               }}
             >
               {project.title}
