@@ -39,12 +39,12 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className="w-full overflow-hidden flex flex-col items-center justify-center"
+      className="w-full overflow-hidden flex flex-col items-center justify-center pb-4!"
       style={{ backgroundColor: "var(--color-cream)" }}
     >
       {/* ── Top columns ── */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 w-full max-w-7xl gap-12  "
+        className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[94rem] gap-12  "
         style={{ padding: "var(--section-py) var(--section-px)" }}
       >
         {/* Left — Work with me */}
@@ -158,19 +158,19 @@ export default function Footer() {
       </div>
 
       {/* ── Oversized name — bottom ── */}
-      <div className="w-full  flex justify-center overflow-hidden">
+      <div className="w-full flex justify-center overflow-hidden">
         <div className="overflow-hidden">
           <motion.p
             custom={0.35}
             variants={revealVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="font-black leading-none w-full text-center md:text-left"
+            className="font-black leading-none w-full text-center "
             style={{
-              fontSize: "clamp(18rem, 32vw, 18rem)",
+              fontFamily: '"Archivo Black", sans-serif',
+              fontSize: "clamp(4rem, 16vw, 18rem)",
               color: "var(--color-text-primary)",
               letterSpacing: "var(--tracking-tight)",
-              paddingLeft: "var(--section-px)",
               lineHeight: 0.85,
             }}
           >

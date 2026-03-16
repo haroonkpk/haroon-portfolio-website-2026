@@ -1,7 +1,14 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView, Variants } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  useSpring,
+  Variants,
+} from "framer-motion";
 import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 import { Project } from "@/src/data/projects";
@@ -49,7 +56,7 @@ const IMG_CONFIG = [
     topPercent: 0,
     leftPercent: 48,
     z: 1,
-    delay: 0.05,
+    delay: 0.01,
   },
   {
     widthPercent: 62,
@@ -57,7 +64,7 @@ const IMG_CONFIG = [
     topPercent: 18,
     leftPercent: 0,
     z: 3,
-    delay: 0.18,
+    delay: 0.08,
   },
   {
     widthPercent: 32,
@@ -65,13 +72,33 @@ const IMG_CONFIG = [
     topPercent: 45,
     leftPercent: 56,
     z: 2,
-    delay: 0.31,
+    delay: 0.01,
   },
 ] as const;
 
 export default function ProjectCard({ project }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const textRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(textRef, { once: false, margin: "-100px" });
+
+  // 1. Scroll Progress
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const y1 = useTransform(smoothProgress, [0, 1], ["-5%", "5%"]);
+  const y2 = useTransform(smoothProgress, [0, 1], ["5%", "-5%"]);
+  const y3 = useTransform(smoothProgress, [0, 1], ["-4%", "4%"]);
+
+  const parallaxTransforms = [y1, y2, y3];
 
   return (
     <Link
@@ -79,10 +106,8 @@ export default function ProjectCard({ project }: Props) {
       className="block w-full"
       style={{ borderBottom: "1px solid var(--color-cream-dark)" }}
     >
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+      <div
+        ref={containerRef}
         className="group w-full"
         style={{ padding: "clamp(2.5rem, 6vw, 5rem) var(--section-px)" }}
       >
@@ -94,16 +119,14 @@ export default function ProjectCard({ project }: Props) {
           {project.images.map((src, i) => {
             const cfg = IMG_CONFIG[i];
             return (
+              // OUTER BOX
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 28 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-                transition={{
-                  duration: 0.75,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: cfg.delay,
-                }}
-                className={`${i === 0 ? "hidden sm:block" : ""} absolute overflow-hidden bg-gray-2001`}
+                initial={{ y: 28 }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.75, delay: cfg.delay }}
+                className={`${i === 0 ? "hidden sm:block" : ""} absolute bg-transparent overflow-hidden`}
                 style={{
                   width: `${cfg.widthPercent}%`,
                   left: `${cfg.leftPercent}%`,
@@ -113,24 +136,58 @@ export default function ProjectCard({ project }: Props) {
                   boxShadow: "0 4px 24px rgba(0,0,0,0.10)",
                 }}
               >
-                <FallbackImage
-                  src={src}
-                  fallbackSrc="/images/projects/placeholder.webp"
-                  alt={`${project.title} — image ${i + 1}`}
-                  fill
-                  className="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  sizes="(max-width: 768px) 60vw, 45vw"
+                {/* ── CURTAIN  EFFECT ── */}
+                <motion.div
+                  initial={{ x: "-0%" }}
+                  whileInView={{ x: "100%" }}
+                  viewport={{ once: true, margin: "-20px" }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.76, 0, 0.24, 1],
+                    delay: cfg.delay,
+                  }}
+                  className="absolute inset-0 z-20 pointer-events-none"
+                  style={{ backgroundColor: "var(--color-gray-warm)" }}
                 />
+
+                {/* INNER BOX (Image) */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{
+                    duration: 0.01,
+                    delay: cfg.delay + 0.45,
+                  }}
+                  style={{
+                    width: "100%",
+                    height: "120%",
+                    top: "-10%",
+                    position: "relative",
+                    y: parallaxTransforms[i],
+                  }}
+                >
+                  <FallbackImage
+                    src={src}
+                    fallbackSrc="/images/projects/placeholder.webp"
+                    alt={`${project.title} — image ${i + 1}`}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 60vw, 45vw"
+                  />
+                </motion.div>
               </motion.div>
             );
           })}
         </div>
 
         {/* ── Text — label + title ── */}
-        <div className="flex flex-col gap-3 mt-6! w-full">
-          {/* Label */}
+        <div ref={textRef} className="flex flex-col gap-3 mt-8! w-full">
           <div className="overflow-hidden">
             <motion.span
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
               variants={revealVariants}
               className="inline-block text-xs font-medium"
               style={{
@@ -145,9 +202,10 @@ export default function ProjectCard({ project }: Props) {
             </motion.span>
           </div>
 
-          {/* Title — full width mobile, 53% desktop */}
           <div className="overflow-hidden w-full">
             <motion.h2
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
               variants={revealVariants}
               className="font-black transition-opacity duration-300 group-hover:opacity-50 w-full md:max-w-[53%]"
               style={{
@@ -161,7 +219,7 @@ export default function ProjectCard({ project }: Props) {
             </motion.h2>
           </div>
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 }

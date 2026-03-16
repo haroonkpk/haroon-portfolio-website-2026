@@ -67,9 +67,10 @@ export default function Hero() {
               variants={revealVariants}
               initial="hidden"
               animate="visible"
-              className="font-black w-full"
+              className="font-black font-archivo w-full"
               style={{
-                fontSize: "clamp(3.5rem, 14vw, 12rem)",
+                 fontFamily: '"Archivo Black", sans-serif',
+                fontSize: "clamp(3rem, 14vw, 10rem)",
                 color: "var(--color-text-inverse)",
                 letterSpacing: "var(--tracking-tight)",
                 lineHeight: 0.9,
@@ -88,6 +89,7 @@ export default function Hero() {
               animate="visible"
               className="font-black w-full"
               style={{
+                 fontFamily: '"Archivo Black", sans-serif',
                 fontSize: "clamp(3.5rem, 14vw, 12rem)",
                 color: "var(--color-text-inverse)",
                 letterSpacing: "var(--tracking-tight)",

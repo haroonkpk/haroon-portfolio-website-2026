@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lugrasimo&display=swap');
+
+
+.font-archivo {
+  font-family: "Archivo Black", sans-serif;
+}
+
+.font-lugrasimo {
+  font-family: "Lugrasimo", cursive;
+}
 @import "tailwindcss";
+
+
 /* ============================================
    DESIGN TOKENS — change here, changes everywhere
    ============================================ */
@@ -105,7 +117,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+ /* font-family: 'Inter', sans-serif; */
   font-size: var(--text-base);
   font-weight: var(--weight-regular);
   background-color: var(--color-bg-primary);
