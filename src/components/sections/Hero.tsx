@@ -1,13 +1,14 @@
 "use client";
 
+import { TransitionContext } from "@/src/lib/TransitionProvider";
 import { motion, Variants } from "framer-motion";
-import Link from "next/link";
+import { useContext } from "react";
 
 const FIRST_NAME = "Muhammad";
 const LAST_NAME = "Haroon";
 const TITLE = "Full Stack Developer";
 const BIO = "Building digital experiences";
-const CTA_PRIMARY = { label: "View Work", href: "#projects" };
+const CTA_PRIMARY = { label: "View Work", href: "/work" };
 const CTA_SECONDARY = { label: "Get in Touch", href: "#contact" };
 
 // Curtain reveal — height 0 to full height
@@ -31,8 +32,12 @@ const fadeUpVariants = {
     transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay },
   }),
 } as Variants;
- 
+
 export default function Hero() {
+  const { navigate } = useContext(TransitionContext) as {
+    navigate: (href: string) => void;
+  };
+
   return (
     <section
       className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-24 overflow-hidden"
@@ -69,7 +74,7 @@ export default function Hero() {
               animate="visible"
               className="font-black font-archivo w-full"
               style={{
-                 fontFamily: '"Archivo Black", sans-serif',
+                fontFamily: '"Archivo Black", sans-serif',
                 fontSize: "clamp(3rem, 14vw, 10rem)",
                 color: "var(--color-text-inverse)",
                 letterSpacing: "var(--tracking-tight)",
@@ -89,7 +94,7 @@ export default function Hero() {
               animate="visible"
               className="font-black w-full"
               style={{
-                 fontFamily: '"Archivo Black", sans-serif',
+                fontFamily: '"Archivo Black", sans-serif',
                 fontSize: "clamp(3.5rem, 14vw, 12rem)",
                 color: "var(--color-text-inverse)",
                 letterSpacing: "var(--tracking-tight)",
@@ -127,8 +132,11 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center gap-4 mt-2"
         >
           {/* Primary — filled cream */}
-          <Link
-            href={CTA_PRIMARY.href}
+          <button
+            onClick={() => {
+              navigate(CTA_PRIMARY.href);
+              close();
+            }}
             className="w-full sm:w-auto text-center px-8 py-3 text-sm font-medium transition-opacity duration-300 hover:opacity-80"
             style={{
               backgroundColor: "var(--color-cream)",
@@ -137,11 +145,14 @@ export default function Hero() {
             }}
           >
             {CTA_PRIMARY.label}
-          </Link>
+          </button>
 
           {/* Secondary — outline */}
-          <Link
-            href={CTA_SECONDARY.href}
+          <button
+            onClick={() => {
+              navigate(CTA_SECONDARY.href);
+              close();
+            }}
             className="w-full sm:w-auto text-center px-8 py-3 text-sm font-medium border transition-opacity duration-300 hover:opacity-60"
             style={{
               borderColor: "var(--color-gray-warm)",
@@ -150,7 +161,7 @@ export default function Hero() {
             }}
           >
             {CTA_SECONDARY.label}
-          </Link>
+          </button>
         </motion.div>
       </div>
     </section>

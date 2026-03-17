@@ -2,7 +2,6 @@
 
 import { useContext, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import Link from "next/link";
 import { TransitionContext } from "@/src/lib/TransitionProvider";
 
 const NAV_LINKS = [

@@ -12,7 +12,6 @@ export function generateStaticParams() {
 }
 
 export default async function Page({ params }: Props) {
-
   const { slug } = await params;
 
   const project = PROJECTS.find((p) => p.slug === slug);
@@ -22,14 +21,13 @@ export default async function Page({ params }: Props) {
   return (
     <main className="w-full">
       {/* 1 — Full screen hero image */}
-      <Hero
-        image={project.images[0]}
-        title={project.title}
-      />
+      <Hero image={project.images[0]} title={project.title} />
 
       {/* 2 — Detail section: client, deliverables, heading, body */}
       <Detail
         client={project.detail.client}
+        liveUrl={project.detail.liveUrl}
+        githubUrl={project.detail.githubUrl}
         deliverables={project.detail.deliverables}
         heading={project.detail.heading}
         body={project.detail.body}

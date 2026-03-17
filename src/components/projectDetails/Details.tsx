@@ -3,12 +3,16 @@
 import { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import Link from "next/link";
+import ProjectLinks from "@/src/components/ui/ProjectLinks";
+import { useRouter } from "next/navigation";
 
 interface Props {
   client: string;
   deliverables: string[];
   heading: string;
   body: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 const revealVariants = {
@@ -28,9 +32,17 @@ const fadeVariants = {
   }),
 } as Variants;
 
-export default function Detail({ client, deliverables, heading, body }: Props) {
-  const ref    = useRef<HTMLDivElement>(null);
+export default function Detail({
+  client,
+  deliverables,
+  heading,
+  body,
+  liveUrl,
+  githubUrl,
+}: Props) {
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const router = useRouter();
 
   return (
     <section
@@ -43,7 +55,6 @@ export default function Detail({ client, deliverables, heading, body }: Props) {
     >
       {/* ── Top row: Back | Client | Deliverables ── */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-16">
-
         {/* Back to work */}
         <motion.div
           custom={0}
@@ -51,17 +62,21 @@ export default function Detail({ client, deliverables, heading, body }: Props) {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <Link
-            href="/#projects"
+          <button
+            onClick={() => router.back()}
             className="inline-flex items-center gap-2 text-sm transition-opacity duration-200 hover:opacity-50"
             style={{
               color: "var(--color-text-primary)",
               textDecoration: "underline",
               textUnderlineOffset: "4px",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
             }}
           >
             ← Back to work
-          </Link>
+          </button>
         </motion.div>
 
         {/* Client */}
@@ -111,24 +126,35 @@ export default function Detail({ client, deliverables, heading, body }: Props) {
 
       {/* ── Bottom row: Heading left | Body right ── */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+        {/* Heading + Links */}
+        <div className="flex flex-col gap-5">
+          <div className="overflow-hidden">
+            <motion.h2
+              custom={0.2}
+              variants={revealVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              className="font-black"
+              style={{
+                fontSize: "clamp(1.6rem, 4vw, 3rem)",
+                color: "var(--color-text-primary)",
+                lineHeight: 1.15,
+                letterSpacing: "var(--tracking-tight)",
+              }}
+            >
+              {heading}
+            </motion.h2>
+          </div>
 
-        {/* Heading */}
-        <div className="overflow-hidden">
-          <motion.h2
-            custom={0.2}
-            variants={revealVariants}
+          {/* Live + GitHub buttons */}
+          <motion.div
+            custom={0.35}
+            variants={fadeVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="font-black"
-            style={{
-              fontSize: "clamp(1.6rem, 4vw, 3rem)",
-              color: "var(--color-text-primary)",
-              lineHeight: 1.15,
-              letterSpacing: "var(--tracking-tight)",
-            }}
           >
-            {heading}
-          </motion.h2>
+            <ProjectLinks liveUrl={liveUrl} githubUrl={githubUrl} />
+          </motion.div>
         </div>
 
         {/* Body paragraphs */}
