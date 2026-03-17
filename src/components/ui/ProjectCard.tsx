@@ -9,9 +9,9 @@ import {
   useSpring,
   Variants,
 } from "framer-motion";
-import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 import { Project } from "@/src/data/projects";
+import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 
 // --- Custom Image with Fallback ---
 interface FallbackImageProps extends ImageProps {
@@ -78,6 +78,7 @@ const IMG_CONFIG = [
 
 export default function ProjectCard({ project }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const go = useTransitionNavigate();
 
   const textRef = useRef<HTMLDivElement>(null);
   const inView = useInView(textRef, { once: false, margin: "-100px" });
@@ -101,9 +102,11 @@ export default function ProjectCard({ project }: Props) {
   const parallaxTransforms = [y1, y2, y3];
 
   return (
-    <Link
-      href={`/project/${project.slug}`}
-      className="block w-full"
+    <div
+      onClick={() => {
+        go(`/project/${project.slug}`);
+      }}
+      className="block w-full cursor-pointer"
       style={{ borderBottom: "1px solid var(--color-cream-dark)" }}
     >
       <div
@@ -208,7 +211,7 @@ export default function ProjectCard({ project }: Props) {
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={revealVariants}
-              className="font-black transition-opacity duration-300 group-hover:opacity-50 w-full md:max-w-[53%]"
+              className="font-black transition-opacity duration-300 group-hover:opacity-50 w-full md:max-w-[53%] "
               style={{
                 fontSize: "clamp(1.6rem, 4vw, 3rem)",
                 color: "var(--color-text-primary)",
@@ -221,6 +224,6 @@ export default function ProjectCard({ project }: Props) {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

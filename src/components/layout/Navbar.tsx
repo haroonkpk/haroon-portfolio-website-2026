@@ -1,8 +1,8 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { TransitionContext } from "@/src/lib/TransitionProvider";
+import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 
 const NAV_LINKS = [
   { label: "Home", sub: "start here", href: "/" },
@@ -61,11 +61,8 @@ const dividerVariants = {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { navigate } = useContext(TransitionContext) as {
-    navigate: (href: string) => void;
-  };
-
   const close = () => setOpen(false);
+  const go = useTransitionNavigate();
 
   return (
     <>
@@ -167,7 +164,7 @@ export default function Navbar() {
                   >
                     <button
                       onClick={() => {
-                        navigate(link.href);
+                        go(link.href);
                         close();
                       }}
                       className="flex flex-col items-center py-4 group"

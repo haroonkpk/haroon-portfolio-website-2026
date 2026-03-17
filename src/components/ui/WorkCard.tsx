@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image, { ImageProps } from "next/image";
+import { motion } from "framer-motion";
 import { Project } from "@/src/data/projects";
+import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 
 const PLACEHOLDER = "/images/projects/placeholder.webp";
 
@@ -24,17 +25,23 @@ function FallbackImage({ src, fallbackSrc, alt, ...rest }: FallbackImageProps) {
 
 interface Props {
   project: Project;
+  delay?: number;
 }
 
-export default function WorkCard({ project }: Props) {
+export default function WorkCard({ project, delay = 0 }: Props) {
+  const go = useTransitionNavigate();
+
   return (
-    <Link href={`/project/${project.slug}`} className="block w-full group">
+    <div
+      onClick={() => go(`/project/${project.slug}`)}
+      className="block w-full group"
+    >
       <div className="w-full flex flex-col gap-3">
-        {/* Image Box — tall, 2 images stacked */}
+        {/* Image Box */}
         <div className="w-full flex flex-col gap-1 shadow-xl">
           {/* First Image */}
           <div
-            className="w-full overflow-hidden"
+            className="relative w-full overflow-hidden"
             style={{ aspectRatio: "6/3" }}
           >
             <FallbackImage
@@ -47,11 +54,20 @@ export default function WorkCard({ project }: Props) {
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               sizes="(max-width: 640px) 100vw, 50vw"
             />
+            {/* Curtain */}
+            <motion.div
+              initial={{ x: "0%" }}
+              whileInView={{ x: "100%" }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay }}
+              className="absolute inset-0 z-20 pointer-events-none"
+              style={{ backgroundColor: "var(--color-gray-warm)" }}
+            />
           </div>
 
           {/* Second Image */}
           <div
-            className="w-full overflow-hidden"
+            className="relative w-full overflow-hidden"
             style={{ aspectRatio: "6/3" }}
           >
             <FallbackImage
@@ -64,22 +80,37 @@ export default function WorkCard({ project }: Props) {
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               sizes="(max-width: 640px) 100vw, 50vw"
             />
+            {/* Curtain — slightly later */}
+            <motion.div
+              initial={{ x: "0%" }}
+              whileInView={{ x: "100%" }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{
+                duration: 1,
+                ease: [0.76, 0, 0.24, 1],
+                delay: delay + 0.15,
+              }}
+              className="absolute inset-0 z-20 pointer-events-none"
+              style={{ backgroundColor: "var(--color-gray-warm)" }}
+            />
           </div>
         </div>
 
-        {/* Title */}
-        <h3
-          className="font-black transition-opacity duration-300 group-hover:opacity-50"
-          style={{
-            fontSize: "clamp(1rem, 2vw, 1.4rem)",
-            color: "var(--color-text-primary)",
-            lineHeight: 1.2,
-            letterSpacing: "var(--tracking-tight)",
-          }}
-        >
-          {project.title}
-        </h3>
+        {/* Title — curtain too */}
+        <div className="relative overflow-hidden">
+          <h3
+            className="font-black transition-opacity duration-300 group-hover:opacity-50"
+            style={{
+              fontSize: "clamp(1.25rem, 2vw, 1.8rem)",
+              color: "var(--color-text-primary)",
+              lineHeight: 1.2,
+              letterSpacing: "var(--tracking-tight)",
+            }}
+          >
+            {project.title}
+          </h3>
+        </div>
       </div>
-    </Link>
+    </div>
   );
 }

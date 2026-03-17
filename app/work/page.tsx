@@ -29,7 +29,7 @@ export default function WorkPage() {
               key={project.slug}
               className="sm:even:mt-[clamp(4rem,10vw,8rem)]"
             >
-              <WorkCard project={project} />
+              <WorkCard project={project}  delay={index * 0.2} />
             </div>
           ))}
         </div>

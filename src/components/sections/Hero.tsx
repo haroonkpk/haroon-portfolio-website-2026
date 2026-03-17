@@ -1,8 +1,7 @@
 "use client";
 
-import { TransitionContext } from "@/src/lib/TransitionProvider";
+import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 import { motion, Variants } from "framer-motion";
-import { useContext } from "react";
 
 const FIRST_NAME = "Muhammad";
 const LAST_NAME = "Haroon";
@@ -34,9 +33,7 @@ const fadeUpVariants = {
 } as Variants;
 
 export default function Hero() {
-  const { navigate } = useContext(TransitionContext) as {
-    navigate: (href: string) => void;
-  };
+ const go = useTransitionNavigate();
 
   return (
     <section
@@ -134,8 +131,7 @@ export default function Hero() {
           {/* Primary — filled cream */}
           <button
             onClick={() => {
-              navigate(CTA_PRIMARY.href);
-              close();
+             go(CTA_PRIMARY.href);
             }}
             className="w-full sm:w-auto text-center px-8 py-3 text-sm font-medium transition-opacity duration-300 hover:opacity-80"
             style={{
@@ -150,8 +146,7 @@ export default function Hero() {
           {/* Secondary — outline */}
           <button
             onClick={() => {
-              navigate(CTA_SECONDARY.href);
-              close();
+              go(CTA_SECONDARY.href);
             }}
             className="w-full sm:w-auto text-center px-8 py-3 text-sm font-medium border transition-opacity duration-300 hover:opacity-60"
             style={{

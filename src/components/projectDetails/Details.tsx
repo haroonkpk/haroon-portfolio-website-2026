@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
-import Link from "next/link";
 import ProjectLinks from "@/src/components/ui/ProjectLinks";
 import { useRouter } from "next/navigation";
 
