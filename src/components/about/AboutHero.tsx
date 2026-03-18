@@ -10,7 +10,7 @@ const PARAGRAPHS = [
   "Based in Pakistan, I work across the full stack — from pixel-perfect frontends to robust backend systems.",
   "I thrive on finding elegant solutions to complex problems, collaborating closely with clients to help their vision flourish.",
 ];
-const CV_URL = "/cv/muhammad-haroon-cv.pdf";
+const CV_URL = "/Muhammad_Haroon_Resume_2026.pdf";
 
 const revealVariants = {
   hidden: { clipPath: "inset(100% 0% 0% 0%)" },

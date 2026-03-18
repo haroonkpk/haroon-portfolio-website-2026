@@ -31,7 +31,7 @@ export default function TransitionProvider({ children }) {
     <TransitionContext.Provider value={{ navigate }}>
       {children}
       <div ref={curtainRef} style={{
-        position: 'fixed', inset: 0, background: '#1a1a1a', zIndex: 9999,
+        position: 'fixed', inset: 0, background: 'var(--color-bg-dark)', zIndex: 9999,
         transform: 'scaleX(0)', transformOrigin: 'left',
         transition: 'transform 0.42s cubic-bezier(0.77,0,0.18,1)'
       }} />

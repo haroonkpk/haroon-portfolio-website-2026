@@ -5,9 +5,9 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 
 const NAV_LINKS = [
-  { label: "Home", sub: "start here", href: "/" },
-  { label: "Work", sub: "selected projects", href: "/work" },
-  { label: "About", sub: "who I am", href: "/about" },
+  { label: "Home", sub: "Sweet Home", href: "/" },
+  { label: "Work", sub: "All projects", href: "/work" },
+  { label: "About", sub: "My Skills", href: "/about" },
 ];
 
 // Full screen overlay
