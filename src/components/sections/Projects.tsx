@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import { PROJECTS } from "@/src/data";
 import ProjectCard from "../ui";
+import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 
 const revealVariants = {
   hidden: { clipPath: "inset(100% 0% 0% 0%)" },
@@ -16,6 +17,7 @@ const revealVariants = {
 export default function Projects() {
   const headingRef = useRef<HTMLDivElement>(null);
   const headingInView = useInView(headingRef, { once: true, margin: "-80px" });
+  const go = useTransitionNavigate();
 
   return (
     <section id="projects" style={{ backgroundColor: "var(--color-cream)" }}>
@@ -64,11 +66,21 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* ── Project cards — full width, stacked ── */}
+      {/* ── Project cards── */}
       <div className="w-full">
         {PROJECTS.map((project, i) => (
           <ProjectCard key={project.slug} project={project} index={i} />
         ))}
+
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => go("/work")}
+            className="underline text-sm font-medium cursor-pointer"
+            style={{ color: "var(--color-text-primary)" }}
+          >
+            View all projects
+          </button>
+        </div>
       </div>
     </section>
   );
