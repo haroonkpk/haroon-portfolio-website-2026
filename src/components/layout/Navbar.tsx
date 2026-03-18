@@ -71,7 +71,7 @@ export default function Navbar() {
       <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50">
         <motion.button
           onClick={() => setOpen((prev) => !prev)}
-          className="group flex flex-col items-center justify-center w-12 h-12 gap-[5px]"
+          className="group flex flex-col items-center justify-center w-12 h-12 md:w-24 md:h-24 gap-[5px]"
           aria-label="Toggle menu"
           whileTap={{ scale: 0.92 }}
         >
@@ -84,18 +84,18 @@ export default function Navbar() {
                 animate={{ opacity: 1, rotate: 0 }}
                 exit={{ opacity: 0, rotate: 45 }}
                 transition={{ duration: 0.25 }}
-                className="flex flex-col items-center justify-center w-10 h-10"
+                className="flex flex-col items-center justify-center w-10 h-10 md:w-20 md:h-20"
                 style={{ backgroundColor: "var(--color-cream)" }}
               >
                 <span
-                  className="block w-5 h-px"
+                  className="block w-5 md:w-10 h-px"
                   style={{
                     backgroundColor: "var(--color-black)",
                     transform: "rotate(45deg) translateY(0.5px)",
                   }}
                 />
                 <span
-                  className="block w-5 h-px"
+                  className="block w-5 h-px md:w-10"
                   style={{
                     backgroundColor: "var(--color-black)",
                     transform: "rotate(-45deg) translateY(-0.5px)",
@@ -110,15 +110,15 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-center justify-center w-10 h-10 gap-[5px]"
+                className="flex flex-col items-center justify-center w-12 h-12 md:w-20 md:h-20 gap-[5px]"
                 style={{ backgroundColor: "var(--color-black-soft)" }}
               >
                 <span
-                  className="block w-5 h-px"
+                  className="block w-5 h-px md:w-10"
                   style={{ backgroundColor: "var(--color-cream)" }}
                 />
                 <span
-                  className="block w-4 h-px"
+                  className="block w-8 h-px"
                   style={{ backgroundColor: "var(--color-cream)" }}
                 />
               </motion.div>

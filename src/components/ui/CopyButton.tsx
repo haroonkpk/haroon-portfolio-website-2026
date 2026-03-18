@@ -1,4 +1,5 @@
-// ── Copy button ──────────────────────────────────────────────
+"use client";
+
 import { useState } from "react";
 
 function CopyButton({ text }: { text: string }) {
