@@ -2,45 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
+import { SKILLS } from "@/src/data";
 
-const SKILLS = [
-  {
-    category: "Frontend",
-    image: "/skills/frontendImg.svg",       
-    items: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "HTML / CSS",
-    ],
-  },
-  {
-    category: "Backend",
-   image: "/skills/backendImg.svg",     
-    items: [
-      "Node.js",
-      "Express",
-      "REST APIs",
-      "GraphQL",
-      "PostgreSQL",
-      "MongoDB",
-    ],
-  },
-  {
-    category: "Tools & DevOps",
-     image: "/skills/toolsImg.svg",     
-    items: [
-      "Git",
-      "Docker",
-      "Vercel",
-      "AWS",
-      "Figma",
-      "Postman",
-    ],
-  },
-];
 
 // ── animation variants ──────────────────────────────────────
 

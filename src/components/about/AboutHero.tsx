@@ -106,7 +106,7 @@ export default function AboutHero() {
                   lineHeight: 1,
                 }}
               >
-                3+
+                2+
               </span>
               <span
                 className="text-xs uppercase"
@@ -142,7 +142,7 @@ export default function AboutHero() {
                   letterSpacing: "var(--tracking-wider)",
                 }}
               >
-                Based in
+                Location
               </span>
             </div>
 
