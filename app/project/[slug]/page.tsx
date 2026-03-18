@@ -6,7 +6,6 @@ interface Props {
   params: { slug: string };
 }
 
-// Static paths generate karo
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
 }
@@ -33,7 +32,6 @@ export default async function Page({ params }: Props) {
         body={project.detail.body}
       />
 
-      {/* 3 — Full width screenshots */}
       <Screenshots
         screenshots={project.detail.screenshots}
         title={project.title}

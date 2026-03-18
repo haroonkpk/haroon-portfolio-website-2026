@@ -8,7 +8,7 @@ const LAST_NAME = "Haroon";
 const TITLE = "Full Stack Developer";
 const BIO = "Building digital experiences";
 const CTA_PRIMARY = { label: "View Work", href: "/work" };
-const CTA_SECONDARY = { label: "Get in Touch", href: "#contact" };
+const CTA_SECONDARY = { label: "view my skills", href: "/about" };
 
 // Curtain reveal — height 0 to full height
 const revealVariants = {
@@ -42,7 +42,6 @@ export default function Hero() {
     >
       {/* Inner container — centered */}
       <div className="flex flex-col items-center text-center gap-6 w-full max-w-5xl">
-        {/* Title — small label upar */}
         <div className="overflow-hidden">
           <motion.p
             custom={0.1}
