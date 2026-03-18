@@ -18,7 +18,7 @@ export default async function Page({ params }: Props) {
   if (!project) notFound();
 
   return (
-    <main className="w-full">
+    <main className="w-full flex flex-col items-center">
       {/* 1 — Full screen hero image */}
       <Hero image={project.images[0]} title={project.title} />
 

@@ -41,7 +41,7 @@ export default function Screenshots({ screenshots, title }: Props) {
   if (!screenshots.length) return null;
 
   return (
-    <section className="w-full px-4! sm:px-8! lg:px-16! py-10! sm:py-16!"
+    <section className="w-full max-w-[94rem] px-4! sm:px-8! lg:px-16! py-10! sm:py-16!"
       style={{ backgroundColor: "var(--color-cream)" }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">

@@ -2,6 +2,7 @@
 
 import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 import { motion, Variants } from "framer-motion";
+import { CopyButton } from "../ui";
 
 const FIRST_NAME = "Muhammad";
 const LAST_NAME = "Haroon";
@@ -33,7 +34,7 @@ const fadeUpVariants = {
 } as Variants;
 
 export default function Hero() {
- const go = useTransitionNavigate();
+  const go = useTransitionNavigate();
 
   return (
     <section
@@ -103,7 +104,7 @@ export default function Hero() {
         </div>
 
         {/* Bio */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden flex flex-col items-center gap-4">
           <motion.p
             custom={0.55}
             variants={revealVariants}
@@ -117,6 +118,27 @@ export default function Hero() {
           >
             {BIO}
           </motion.p>
+          <motion.div
+            custom={0.55}
+            variants={revealVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex items-center gap-3 flex-wrap"
+          >
+            <a
+              href="https://wa.me/923340520574"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium transition-opacity duration-200 hover:opacity-50"
+              style={{
+                color: "var(--color-cream)",
+                fontSize: "clamp(0.875rem, 1.5vw, 1rem)",
+              }}
+            >
+              +92 334 0520574
+            </a>
+            <CopyButton text={"+92 334 0520574"} variant="dark" />
+          </motion.div>
         </div>
 
         {/* CTA Buttons */}
@@ -130,7 +152,7 @@ export default function Hero() {
           {/* Primary — filled cream */}
           <button
             onClick={() => {
-             go(CTA_PRIMARY.href);
+              go(CTA_PRIMARY.href);
             }}
             className="w-full sm:w-auto text-center px-8 py-3 text-sm font-medium transition-opacity duration-300 hover:opacity-80"
             style={{
