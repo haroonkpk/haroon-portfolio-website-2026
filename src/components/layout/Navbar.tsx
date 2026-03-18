@@ -7,6 +7,7 @@ import { useTransitionNavigate } from "@/src/lib/useTransitionNavigate";
 const NAV_LINKS = [
   { label: "Home", sub: "start here", href: "/" },
   { label: "Work", sub: "selected projects", href: "/work" },
+  { label: "About", sub: "who I am", href: "/about" },
 ];
 
 // Full screen overlay
