@@ -72,7 +72,7 @@ export default function Hero() {
               className="font-black font-archivo w-full"
               style={{
                 fontFamily: '"Archivo Black", sans-serif',
-                fontSize: "clamp(3rem, 14vw, 10rem)",
+                fontSize: "clamp(2rem, 14vw, 10rem)",
                 color: "var(--color-text-inverse)",
                 letterSpacing: "var(--tracking-tight)",
                 lineHeight: 0.9,
@@ -92,7 +92,7 @@ export default function Hero() {
               className="font-black w-full"
               style={{
                 fontFamily: '"Archivo Black", sans-serif',
-                fontSize: "clamp(3.5rem, 14vw, 12rem)",
+                fontSize: "clamp(2rem, 14vw, 12rem)",
                 color: "var(--color-text-inverse)",
                 letterSpacing: "var(--tracking-tight)",
                 lineHeight: 0.9,
