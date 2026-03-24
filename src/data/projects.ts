@@ -17,32 +17,30 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    slug: "ecommerce-platform",
-    label: "E-Commerce",
-    title: "Full stack ecommerce platform with real-time inventory",
+    slug: "smartprep",
+    label: "AI / EdTech",
+    title: "AI-powered exam preparation platform for VU students",
 
     images: [
-      "/images/projects/11.png",
+      "/images/projects/smartprep1.png",
       "/images/projects/12.png",
       "/images/projects/13.png",
     ],
     detail: {
-      liveUrl: "https://ecommerce-demo.vercel.app",
-      githubUrl: "https://github.com/username/ecommerce-platform",
-      client: "RetailCo",
-      deliverables: ["Development", "UI", "UX", "Backend"],
-      heading: "A modern shopping experience",
+      client: "Virtual University Students",
+      deliverables: ["Development", "UI", "UX", "AI Integration", "Backend"],
+      heading: "Smarter studying for VU",
       body: [
-        "Built a full stack ecommerce platform with real-time inventory management, payment integration, and admin dashboard.",
-        "The platform supports thousands of concurrent users with optimized database queries and caching strategies.",
+        "Built an AI-powered exam preparation platform for Virtual University students covering 30+ subjects, featuring an Exam Topic Predictor, Past Paper Analyzer, and PDF Study Assistant.",
+        "Leveraged LangChain, Google Gemini, and Groq to deliver fast, intelligent responses, with Supabase (PostgreSQL) for scalable data storage and Next.js 16 for a blazing-fast frontend.",
       ],
       screenshots: ["/images/projects/14.png", "/images/projects/15.png"],
     },
   },
   {
-    slug: "saas-dashboard",
-    label: "SaaS",
-    title: "Analytics dashboard for enterprise data visualization",
+    slug: "hashim-dawakhana",
+    label: "Blogging / CMS",
+    title: "Dynamic blogging system for a local herbal store",
 
     images: [
       "/images/projects/14.png",
@@ -50,22 +48,20 @@ export const PROJECTS: Project[] = [
       "/images/projects/16.png",
     ],
     detail: {
-      liveUrl: "https://dashboard-demo.vercel.app",
-      // githubUrl nahi — private repo
-      client: "DataViz Inc",
-      deliverables: ["Frontend", "API Integration", "Charts"],
-      heading: "Data made beautiful",
+      client: "Hakeem Amir Hashmi",
+      deliverables: ["Frontend", "Backend", "CMS", "Content Management"],
+      heading: "A blog as natural as the remedies",
       body: [
-        "Designed and developed an enterprise analytics dashboard with real-time data updates and interactive charts.",
-        "Custom chart components built from scratch for maximum performance and flexibility.",
+        "Designed and developed a clean, dynamic blogging platform for Hashim Dawakhana — a local herbal store — complete with a smart admin panel for managing articles, categories, and reorderable content blocks.",
+        "Used SWR for real-time data fetching, Cloudinary for media management, and MongoDB for flexible content storage, all wrapped in a polished Next.js and TypeScript setup.",
       ],
       screenshots: ["/images/projects/11.png", "/images/projects/12.png"],
     },
   },
   {
-    slug: "mobile-app",
-    label: "Mobile",
-    title: "Cross-platform mobile app for food delivery service",
+    slug: "business-nexus",
+    label: "Networking",
+    title: "Real-time networking app for entrepreneurs and investors",
 
     images: [
       "/images/projects/13.png",
@@ -73,22 +69,20 @@ export const PROJECTS: Project[] = [
       "/images/projects/16.png",
     ],
     detail: {
-      githubUrl: "https://github.com/username/food-delivery-app",
-      // liveUrl nahi — app store only
-      client: "FoodRush",
-      deliverables: ["React Native", "Node.js", "Maps API"],
-      heading: "Food at your fingertips",
+      client: "Practice Project",
+      deliverables: ["Full Stack", "Real-time Chat", "UI", "Backend"],
+      heading: "Where deals begin",
       body: [
-        "Built a cross-platform food delivery app with real-time order tracking, payment processing, and push notifications.",
-        "Integrated Google Maps for live delivery tracking with sub-second location updates.",
+        "Built a modern networking application that helps entrepreneurs and investors connect, chat, and collaborate in real time using Socket.io for live messaging.",
+        "Implemented Zustand for lightweight state management and a robust Node.js/Express/MongoDB backend to handle user profiles, connection requests, and chat rooms.",
       ],
       screenshots: ["/images/projects/13.png", "/images/projects/15.png"],
     },
   },
   {
-    slug: "cms-platform",
-    label: "CMS",
-    title: "Headless CMS with multi-language support",
+    slug: "ecommerce-marketplace",
+    label: "E-Commerce",
+    title: "Full-featured e-commerce marketplace with admin dashboard",
 
     images: [
       "/images/projects/12.png",
@@ -96,14 +90,12 @@ export const PROJECTS: Project[] = [
       "/images/projects/11.png",
     ],
     detail: {
-      liveUrl: "https://cms-demo.vercel.app",
-      githubUrl: "https://github.com/username/headless-cms",
-      client: "MediaGroup",
-      deliverables: ["Next.js", "Sanity", "i18n"],
-      heading: "Content without limits",
+      client: "Practice Project",
+      deliverables: ["Development", "UI", "UX", "Backend", "Auth"],
+      heading: "Shop. Sell. Scale.",
       body: [
-        "Built a headless CMS solution supporting 5 languages with a custom translation workflow for content editors.",
-        "The platform serves 50k+ monthly visitors with 99.9% uptime using edge caching.",
+        "Developed a full-featured e-commerce marketplace with product listings, user authentication, a complete cart system, and an admin dashboard for managing inventory and orders.",
+        "Built with React, Zustand, and Node.js/Express on the backend, using Cloudinary for product image hosting and MongoDB for all data storage.",
       ],
       screenshots: ["/images/projects/16.png", "/images/projects/dumy.jpeg"],
     },

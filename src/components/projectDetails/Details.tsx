@@ -46,12 +46,15 @@ export default function Detail({
   return (
     <section
       ref={ref}
-      className="w-full"
+      className="w-full  flex justify-center "
       style={{
         backgroundColor: "var(--color-gray-warm)",
         padding: "clamp(3rem, 6vw, 5rem) var(--section-px)",
       }}
     >
+      <div className="w-full max-w-[94rem] px-4! sm:px-8! lg:px-16! py-10! sm:py-16! overflow-hidden">
+
+     
       {/* ── Top row: Back | Client | Deliverables ── */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-16">
         {/* Back to work */}
@@ -173,6 +176,7 @@ export default function Detail({
           ))}
         </div>
       </div>
+       </div>
     </section>
   );
 }

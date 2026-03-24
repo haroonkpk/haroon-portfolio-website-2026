@@ -20,7 +20,7 @@ export default function Projects() {
   const go = useTransitionNavigate();
 
   return (
-    <section id="projects" style={{ backgroundColor: "var(--color-cream)" }}>
+    <section className="w-full max-w-[94rem]" id="projects" style={{ backgroundColor: "var(--color-cream)" }}>
       {/* ── Section heading ── */}
       <div
         ref={headingRef}
