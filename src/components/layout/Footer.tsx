@@ -187,10 +187,7 @@ export default function Footer() {
             LinkedIn
           </a>
         </div>
-
-        <p className="text-xs" style={{ color: "var(--color-text-secondary)" }}>
-          © {new Date().getFullYear()} {FULL_NAME}. All rights reserved.
-        </p>
+       
       </div>
 
       {/* ── Animated letter-by-letter name ── */}
