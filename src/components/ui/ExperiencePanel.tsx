@@ -197,7 +197,7 @@ function ExperiencePanel({
           className="uppercase"
           style={{
             fontSize: "clamp(0.7rem, 1.5vw, 0.85rem)",
-            color: "var(--color-text-muted)",
+            color: "var(--color-text-light)",
             letterSpacing: "var(--tracking-wider)",
           }}
         >

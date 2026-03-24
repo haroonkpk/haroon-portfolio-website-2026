@@ -131,7 +131,7 @@ function SkillColumn({
           >
             {/* dash */}
             <span
-              className="flex-shrink-0 w-4 h-px"
+              className="flex-shrink-0 w-1 h-1  rounded-full"
               style={{ backgroundColor: "var(--color-text-muted)" }}
             />
             {skill}

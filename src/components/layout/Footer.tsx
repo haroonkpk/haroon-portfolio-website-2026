@@ -83,11 +83,11 @@ export default function Footer() {
             style={{ backgroundColor: "var(--color-cream-dark)" }}
           />
           <h3
-            className="font-black w-fit"
+            className="font-black p-4"
             style={{
               fontSize: "clamp(1.5rem, 3vw, 2rem)",
-              color: "var(--color-cream-dark)",
-              backgroundColor: "var(--color-black)",
+              color: "var(--color-text-light)",
+              backgroundColor: "var(--color-gray-warm)",
             }}
           >
             Work with me
