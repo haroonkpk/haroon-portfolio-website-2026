@@ -142,19 +142,15 @@ function ExperiencePanel({
             Learned
           </span>
           {exp.learned.map((item, i) => (
-            <motion.p
+            <p
               key={i}
-              custom={0.2 + i * 0.05}
-              variants={fadeVariants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
               style={{
                 fontSize: "clamp(0.8rem, 2vw, 1rem)",
                 color: "var(--color-text-primary)",
               }}
             >
               {item}
-            </motion.p>
+            </p>
           ))}
         </div>
 
@@ -171,19 +167,15 @@ function ExperiencePanel({
             Built
           </span>
           {exp.built.map((item, i) => (
-            <motion.p
+            <p
               key={i}
-              custom={0.25 + i * 0.05}
-              variants={fadeVariants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
               style={{
                 fontSize: "clamp(0.8rem, 2vw, 1rem)",
                 color: "var(--color-text-primary)",
               }}
             >
               {item}
-            </motion.p>
+            </p>
           ))}
         </div>
       </div>
@@ -204,11 +196,7 @@ function ExperiencePanel({
           Projects
         </span>
         <div className="overflow-hidden">
-          <motion.span
-            custom={0.3}
-            variants={revealVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+          <span
             className="inline-block font-black"
             style={{
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
@@ -218,7 +206,7 @@ function ExperiencePanel({
             }}
           >
             {exp.stat}
-          </motion.span>
+          </span>
         </div>
       </div>
     </motion.div>
