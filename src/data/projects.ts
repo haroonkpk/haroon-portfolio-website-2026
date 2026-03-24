@@ -2,6 +2,7 @@ export interface Project {
   slug: string;
   label: string;
   title: string;
+  origin: "Freelance" | "Personal" | "Agency";
 
   images: [string, string, string];
   detail: {
@@ -20,6 +21,7 @@ export const PROJECTS: Project[] = [
     slug: "smartprep",
     label: "AI / EdTech",
     title: "AI-powered exam preparation platform for VU students",
+    origin: "Freelance",
 
     images: [
       "/images/projects/smartprep1.png",
@@ -41,6 +43,7 @@ export const PROJECTS: Project[] = [
     slug: "hashim-dawakhana",
     label: "Blogging / CMS",
     title: "Dynamic blogging system for a local herbal store",
+    origin: "Freelance",
 
     images: [
       "/images/projects/14.png",
@@ -62,6 +65,7 @@ export const PROJECTS: Project[] = [
     slug: "business-nexus",
     label: "Networking",
     title: "Real-time networking app for entrepreneurs and investors",
+    origin: "Personal",
 
     images: [
       "/images/projects/13.png",
@@ -83,6 +87,7 @@ export const PROJECTS: Project[] = [
     slug: "ecommerce-marketplace",
     label: "E-Commerce",
     title: "Full-featured e-commerce marketplace with admin dashboard",
+    origin: "Personal",
 
     images: [
       "/images/projects/12.png",
