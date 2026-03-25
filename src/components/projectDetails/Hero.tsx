@@ -36,7 +36,7 @@ export default function Hero({ image, title, priority = false }: Props) {
           priority={priority}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
-          className="w-full h-auto max-h-[80vh] object-cover block"
+          className="w-full h-auto max-h-[80vh] object-contain block"
           sizes="100vw"
           onError={(e) => {
             (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;

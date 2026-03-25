@@ -18,7 +18,12 @@ interface FallbackImageProps extends ImageProps {
   fallbackSrc: string;
 }
 
-const FallbackImage = ({ src, fallbackSrc, alt, ...rest }: FallbackImageProps) => {
+const FallbackImage = ({
+  src,
+  fallbackSrc,
+  alt,
+  ...rest
+}: FallbackImageProps) => {
   const [imgSrc, setImgSrc] = useState(src || fallbackSrc);
   return (
     <Image
@@ -46,12 +51,37 @@ const revealVariants = {
 } as Variants;
 
 const IMG_CONFIG = [
-  { widthPercent: 48, aspectRatio: "1/1",   topPercent: 0,  leftPercent: 48, z: 1, delay: 0.01 },
-  { widthPercent: 62, aspectRatio: "16/10", topPercent: 18, leftPercent: 0,  z: 3, delay: 0.08 },
-  { widthPercent: 32, aspectRatio: "4/5",   topPercent: 45, leftPercent: 56, z: 2, delay: 0.01 },
+  {
+    widthPercent: 48,
+    aspectRatio: "1/1",
+    topPercent: 0,
+    leftPercent: 48,
+    z: 1,
+    delay: 0.01,
+  },
+  {
+    widthPercent: 62,
+    aspectRatio: "16/10",
+    topPercent: 18,
+    leftPercent: 0,
+    z: 3,
+    delay: 0.08,
+  },
+  {
+    widthPercent: 32,
+    aspectRatio: "4/5",
+    topPercent: 45,
+    leftPercent: 56,
+    z: 2,
+    delay: 0.01,
+  },
 ] as const;
 
-export default function ProjectCard({ project, index, priority = false }: Props) {
+export default function ProjectCard({
+  project,
+  index,
+  priority = false,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const go = useTransitionNavigate();
 
@@ -117,7 +147,11 @@ export default function ProjectCard({ project, index, priority = false }: Props)
                   initial={{ x: "-0%" }}
                   whileInView={{ x: "100%" }}
                   viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: cfg.delay }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.76, 0, 0.24, 1],
+                    delay: cfg.delay,
+                  }}
                   className="absolute inset-0 z-20 pointer-events-none"
                   style={{ backgroundColor: "var(--color-gray-warm)" }}
                 />

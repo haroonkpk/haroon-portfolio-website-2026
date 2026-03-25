@@ -52,8 +52,8 @@ export const PROJECTS: Project[] = [
     images: [
       "/images/projects/hashimDawakhana/hashimDawakhanaHero.png",
       "/images/projects/hashimDawakhana/hashimDawakhanaBlogsList.png",
-      "/images/projects/hashimDawakhana/hashimDawakhanaBlogDetails.png",
       "/images/projects/hashimDawakhana/hashimDawakhanaAdminBlogs.png",
+      "/images/projects/hashimDawakhana/hashimDawakhanaBlogDetails.png",
       "/images/projects/hashimDawakhana/hashimDawakhanaAdmin.png",
     ],
     detail: {
