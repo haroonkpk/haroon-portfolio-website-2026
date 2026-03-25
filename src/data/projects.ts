@@ -24,9 +24,9 @@ export const PROJECTS: Project[] = [
     origin: "Freelance",
 
     images: [
-      "/images/projects/smartprep1.png",
-      "/images/projects/12.png",
-      "/images/projects/13.png",
+      "/images/projects/smartPrep/Analyzer.png",
+      "/images/projects/smartPrep/Predictor.png",
+      "/images/projects/smartPrep/Assistant.png",
     ],
     detail: {
       client: "Virtual University Students",
@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
         "Built an AI-powered exam preparation platform for Virtual University students covering 30+ subjects, featuring an Exam Topic Predictor, Past Paper Analyzer, and PDF Study Assistant.",
         "Leveraged LangChain, Google Gemini, and Groq to deliver fast, intelligent responses, with Supabase (PostgreSQL) for scalable data storage and Next.js 16 for a blazing-fast frontend.",
       ],
-      screenshots: ["/images/projects/14.png", "/images/projects/15.png"],
+      screenshots: ["/images/projects/smartPrep/Resources.png", "/images/projects/smartPrep/Connect.png"],
     },
   },
   {
