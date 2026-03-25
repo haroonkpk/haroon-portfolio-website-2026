@@ -50,8 +50,8 @@ export const PROJECTS: Project[] = [
     origin: "Freelance",
 
     images: [
-      "/images/projects/hashimDawakhana/hashimDawakhanaHero.png",
       "/images/projects/hashimDawakhana/hashimDawakhanaBlogsList.png",
+      "/images/projects/hashimDawakhana/hashimDawakhanaHero.png",
       "/images/projects/hashimDawakhana/hashimDawakhanaAdminBlogs.png",
       "/images/projects/hashimDawakhana/hashimDawakhanaBlogDetails.png",
       "/images/projects/hashimDawakhana/hashimDawakhanaAdmin.png",
@@ -66,6 +66,37 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
+  // agoshCare
+  {
+    slug: "agosh-care",
+    label: "NGO / Management System",
+    title: "Multi-tier donation and branch management system for an NGO",
+    origin: "Agency",
+
+    images: [
+      "/images/projects/agosh/agosh1.png",
+      "/images/projects/agosh/agosh2.png",
+      "/images/projects/agosh/agosh3.png",
+      "/images/projects/agosh/agosh4.png",
+      "/images/projects/agosh/agosh5.png",
+      "/images/projects/agosh/agosh6.png",
+      "/images/projects/agosh/agosh7.png",
+    ],
+    detail: {
+      client: "Agosh Care Center",
+      deliverables: [
+        "Full Stack Development",
+        "Role-Based Access Control",
+        "Donation Tracking",
+        "Admin Dashboard",
+      ],
+      heading: "Streamlining global care and transparent donations",
+      body: [
+        "Developed a comprehensive management system for Agosh Care Center to bridge the gap between donors and beneficiaries. The platform is built on a robust role-based architecture supporting three distinct user types: Head Admins, Branch Admins, and Donors.",
+        "Head Admins can oversee the global network, creating new branches and assigning branch managers. Branch Admins have localized control to manage student profiles and track branch-specific funds. For Donors, the platform provides a seamless and transparent contribution process, allowing them to choose whether to sponsor a specific needy student directly or contribute to a branch's general fund.",
+      ],
+    },
+  },
 
   // alsabrPetro
   {
@@ -76,15 +107,15 @@ export const PROJECTS: Project[] = [
     origin: "Agency",
 
     images: [
-      "/images/projects/alsaberPetro/alsaberPetro7.png",
       "/images/projects/alsaberPetro/alsaberPetro1.png",
+      "/images/projects/alsaberPetro/alsaberPetro8.png",
       "/images/projects/alsaberPetro/alsaberPetro3.png",
+      "/images/projects/alsaberPetro/alsaberPetro7.png",
       "/images/projects/alsaberPetro/alsaberPetro4.png",
       "/images/projects/alsaberPetro/alsaberPetro2.png",
       "/images/projects/alsaberPetro/alsaberPetro5.png",
       "/images/projects/alsaberPetro/alsaberPetro9.png",
       "/images/projects/alsaberPetro/alsaberPetro6.png",
-      "/images/projects/alsaberPetro/alsaberPetro8.png",
       "/images/projects/alsaberPetro/alsaberPetro10.png",
     ],
     detail: {

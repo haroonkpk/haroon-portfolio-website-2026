@@ -19,7 +19,7 @@ export default async function Page({ params }: Props) {
   const heroImage = project.images[0];
   const galleryImages = project.images.slice(1); 
 
-  return (
+  return ( 
     <main className="w-full flex flex-col items-center">       
       <Hero image={heroImage} title={project.title} priority />
 

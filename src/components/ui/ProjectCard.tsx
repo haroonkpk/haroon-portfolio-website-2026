@@ -52,20 +52,20 @@ const revealVariants = {
 
 const IMG_CONFIG = [
   {
-    widthPercent: 48,
-    aspectRatio: "1/1",
-    topPercent: 0,
-    leftPercent: 48,
-    z: 1,
-    delay: 0.01,
-  },
-  {
     widthPercent: 62,
     aspectRatio: "16/10",
     topPercent: 18,
     leftPercent: 0,
     z: 3,
     delay: 0.08,
+  },
+  {
+    widthPercent: 48,
+    aspectRatio: "1/1",
+    topPercent: 0,
+    leftPercent: 48,
+    z: 1,
+    delay: 0.01,
   },
   {
     widthPercent: 32,
