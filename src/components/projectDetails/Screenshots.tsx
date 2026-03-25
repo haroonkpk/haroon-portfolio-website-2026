@@ -7,11 +7,19 @@ import Image from "next/image";
 const PLACEHOLDER_IMG = "/images/projects/placeholder.webp";
 
 interface Props {
-  screenshots: string[];
+  images: string[];
   title: string;
 }
 
-function ScreenshotImage({ src, alt, delay }: { src: string; alt: string; delay: number }) {
+function ScreenshotImage({
+  src,
+  alt,
+  delay,
+}: {
+  src: string;
+  alt: string;
+  delay: number;
+}) {
   const [imgSrc, setImgSrc] = useState(src);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -31,23 +39,25 @@ function ScreenshotImage({ src, alt, delay }: { src: string; alt: string; delay:
         height={0}
         sizes="(max-width: 640px) 100vw, 50vw"
         className="w-full h-auto"
+        loading="lazy"
         onError={() => setImgSrc(PLACEHOLDER_IMG)}
       />
     </motion.div>
   );
 }
 
-export default function Screenshots({ screenshots, title }: Props) {
-  if (!screenshots.length) return null;
+export default function Screenshots({ images, title }: Props) {
+  if (!images.length) return null;
 
   return (
-    <section className="w-full max-w-[94rem] px-4! sm:px-8! lg:px-16! py-10! sm:py-16!"
+    <section
+      className="w-full max-w-[94rem] px-4! sm:px-8! lg:px-16! py-10! sm:py-16!"
       style={{ backgroundColor: "var(--color-cream)" }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-        {screenshots.map((src, i) => (
+        {images.map((src, i) => (
           <ScreenshotImage
-            key={i}
+            key={src}
             src={src}
             alt={`${title} screenshot ${i + 1}`}
             delay={i * 0.1}

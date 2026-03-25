@@ -14,15 +14,16 @@ export default async function Page({ params }: Props) {
   const { slug } = await params;
 
   const project = PROJECTS.find((p) => p.slug === slug);
-
   if (!project) notFound();
 
-  return (
-    <main className="w-full flex flex-col items-center">
-      {/* 1 — Full screen hero image */}
-      <Hero image={project.images[0]} title={project.title} />
+  const heroImage = project.images[0];
+  const galleryImages = project.images.slice(1); 
 
-      {/* 2 — Detail section: client, deliverables, heading, body */}
+  return (
+    <main className="w-full flex flex-col items-center">       
+      <Hero image={heroImage} title={project.title} priority />
+
+      {/* Detail meta section */}
       <Detail
         client={project.detail.client}
         liveUrl={project.detail.liveUrl}
@@ -32,10 +33,7 @@ export default async function Page({ params }: Props) {
         body={project.detail.body}
       />
 
-      <Screenshots
-        screenshots={project.detail.screenshots}
-        title={project.title}
-      />
+      <Screenshots images={galleryImages} title={project.title} />
     </main>
   );
 }

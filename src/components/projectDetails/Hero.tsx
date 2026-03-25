@@ -9,9 +9,10 @@ const PLACEHOLDER_IMG = "/images/projects/placeholder.webp";
 interface Props {
   image: string;
   title: string;
+  priority?: boolean;
 }
 
-export default function Hero({ image, title }: Props) {
+export default function Hero({ image, title, priority = false }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -32,7 +33,9 @@ export default function Hero({ image, title }: Props) {
           alt={title}
           width={1920}
           height={1080}
-          priority
+          priority={priority}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
           className="w-full h-auto max-h-[80vh] object-cover block"
           sizes="100vw"
           onError={(e) => {

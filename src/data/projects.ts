@@ -4,7 +4,8 @@ export interface Project {
   title: string;
   origin: "Freelance" | "Personal" | "Agency";
 
-  images: [string, string, string];
+  images: string[];
+
   detail: {
     client: string;
     liveUrl?: string;
@@ -12,21 +13,23 @@ export interface Project {
     deliverables: string[];
     heading: string;
     body: string[];
-    screenshots: string[];
   };
 }
 
 export const PROJECTS: Project[] = [
+  // smartprep
   {
     slug: "smartprep",
     label: "AI / EdTech",
     title: "AI-powered exam preparation platform for VU students",
-    origin: "Freelance",
+    origin: "Personal",
 
     images: [
       "/images/projects/smartPrep/Analyzer.png",
       "/images/projects/smartPrep/Predictor.png",
       "/images/projects/smartPrep/Assistant.png",
+      "/images/projects/smartPrep/Resources.png",
+      "/images/projects/smartPrep/Connect.png",
     ],
     detail: {
       client: "Virtual University Students",
@@ -36,9 +39,10 @@ export const PROJECTS: Project[] = [
         "Built an AI-powered exam preparation platform for Virtual University students covering 30+ subjects, featuring an Exam Topic Predictor, Past Paper Analyzer, and PDF Study Assistant.",
         "Leveraged LangChain, Google Gemini, and Groq to deliver fast, intelligent responses, with Supabase (PostgreSQL) for scalable data storage and Next.js 16 for a blazing-fast frontend.",
       ],
-      screenshots: ["/images/projects/smartPrep/Resources.png", "/images/projects/smartPrep/Connect.png"],
     },
   },
+
+  // hashimDawakhana
   {
     slug: "hashim-dawakhana",
     label: "Blogging / CMS",
@@ -46,9 +50,11 @@ export const PROJECTS: Project[] = [
     origin: "Freelance",
 
     images: [
-      "/images/projects/14.png",
-      "/images/projects/15.png",
-      "/images/projects/16.png",
+      "/images/projects/hashimDawakhana/hashimDawakhanaHero.png",
+      "/images/projects/hashimDawakhana/hashimDawakhanaBlogsList.png",
+      "/images/projects/hashimDawakhana/hashimDawakhanaBlogDetails.png",
+      "/images/projects/hashimDawakhana/hashimDawakhanaAdminBlogs.png",
+      "/images/projects/hashimDawakhana/hashimDawakhanaAdmin.png",
     ],
     detail: {
       client: "Hakeem Amir Hashmi",
@@ -58,51 +64,41 @@ export const PROJECTS: Project[] = [
         "Designed and developed a clean, dynamic blogging platform for Hashim Dawakhana — a local herbal store — complete with a smart admin panel for managing articles, categories, and reorderable content blocks.",
         "Used SWR for real-time data fetching, Cloudinary for media management, and MongoDB for flexible content storage, all wrapped in a polished Next.js and TypeScript setup.",
       ],
-      screenshots: ["/images/projects/11.png", "/images/projects/12.png"],
     },
   },
+
+  // alsabrPetro
   {
-    slug: "business-nexus",
-    label: "Networking",
-    title: "Real-time networking app for entrepreneurs and investors",
-    origin: "Personal",
+    slug: "alsabr-petro",
+    label: "Corporate / Consulting",
+    title:
+      "Corporate website for a Saudi Arabian oil & gas drilling consultancy",
+    origin: "Agency",
 
     images: [
-      "/images/projects/13.png",
-      "/images/projects/dumy.jpeg",
-      "/images/projects/16.png",
+      "/images/projects/alsaberPetro/alsaberPetro7.png",
+      "/images/projects/alsaberPetro/alsaberPetro1.png",
+      "/images/projects/alsaberPetro/alsaberPetro3.png",
+      "/images/projects/alsaberPetro/alsaberPetro4.png",
+      "/images/projects/alsaberPetro/alsaberPetro2.png",
+      "/images/projects/alsaberPetro/alsaberPetro5.png",
+      "/images/projects/alsaberPetro/alsaberPetro9.png",
+      "/images/projects/alsaberPetro/alsaberPetro6.png",
+      "/images/projects/alsaberPetro/alsaberPetro8.png",
+      "/images/projects/alsaberPetro/alsaberPetro10.png",
     ],
     detail: {
-      client: "Practice Project",
-      deliverables: ["Full Stack", "Real-time Chat", "UI", "Backend"],
-      heading: "Where deals begin",
-      body: [
-        "Built a modern networking application that helps entrepreneurs and investors connect, chat, and collaborate in real time using Socket.io for live messaging.",
-        "Implemented Zustand for lightweight state management and a robust Node.js/Express/MongoDB backend to handle user profiles, connection requests, and chat rooms.",
+      client: "ALSABR-PETRO (Saudi Arabia)",
+      deliverables: [
+        "Frontend Development",
+        "UI/UX Implementation",
+        "Responsive Design",
       ],
-      screenshots: ["/images/projects/13.png", "/images/projects/15.png"],
-    },
-  },
-  {
-    slug: "ecommerce-marketplace",
-    label: "E-Commerce",
-    title: "Full-featured e-commerce marketplace with admin dashboard",
-    origin: "Personal",
-
-    images: [
-      "/images/projects/12.png",
-      "/images/projects/dumy.jpeg",
-      "/images/projects/11.png",
-    ],
-    detail: {
-      client: "Practice Project",
-      deliverables: ["Development", "UI", "UX", "Backend", "Auth"],
-      heading: "Shop. Sell. Scale.",
+      heading: "Empowering the global energy future",
       body: [
-        "Developed a full-featured e-commerce marketplace with product listings, user authentication, a complete cart system, and an admin dashboard for managing inventory and orders.",
-        "Built with React, Zustand, and Node.js/Express on the backend, using Cloudinary for product image hosting and MongoDB for all data storage.",
+        "Developed a professional corporate website for ALSABR-PETRO, a specialized oil and gas drilling engineering consulting firm based in Jeddah, Saudi Arabia. The platform showcases their expertise in well planning, performance optimization, and manpower supply.",
+        "Built during my tenure as an Associate Full Stack Web Developer at Apptek1. Focused on delivering a clean, modern, and highly responsive user interface that effectively highlights the company's 40+ years of industry experience and international standards.",
       ],
-      screenshots: ["/images/projects/16.png", "/images/projects/dumy.jpeg"],
     },
   },
 ];
