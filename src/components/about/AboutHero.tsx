@@ -5,10 +5,10 @@ import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
 const WHO = "Who I am";
 const PARAGRAPHS = [
-  "I'm Muhammad Haroon, a Full Stack Developer passionate about building fast, scalable, and beautiful digital products.",
-  "I love bringing ideas to life through clean code and thoughtful design — creating experiences that are delightful to use.",
-  "Based in Pakistan, I work across the full stack — from pixel-perfect frontends to robust backend systems.",
-  "I thrive on finding elegant solutions to complex problems, collaborating closely with clients to help their vision flourish.",
+  "Hi, I'm Haroon — a Web Developer with 2 years of experience in MERN Stack and Next.js.",
+  "When a client needed smooth full-page scrolling with custom animations, no existing library did the job right. So I built a custom scrolling engine with the help of AI that was stable, smooth, and exactly what was needed.",
+  "I also built a SaaS for VU students that compresses 1 hour of exam preparation into under 10 minutes — because good software should save time, not waste it.",
+  "Currently on contract at Apptek1, and open to new opportunities.",
 ];
 const CV_URL = "/Muhammad_Haroon_Resume_2026.pdf";
 
