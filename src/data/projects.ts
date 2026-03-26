@@ -132,4 +132,42 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
+
+
+  // scholarshipManagement
+  {
+    slug: "scholarship-management",
+    label: "Education / Portal",
+    title: "Multi-role scholarship management and evaluation system",
+    origin: "Agency",
+
+    images: [
+      "/images/projects/scholarship/scholarship1.png",
+      "/images/projects/scholarship/scholarship2.png",
+      "/images/projects/scholarship/scholarship3.png",
+      "/images/projects/scholarship/scholarship4.png",
+      "/images/projects/scholarship/scholarship5.png",
+      "/images/projects/scholarship/scholarship6.png",
+      "/images/projects/scholarship/scholarship7.png",
+      "/images/projects/scholarship/scholarship11.png",
+      "/images/projects/scholarship/scholarship12.png",
+      "/images/projects/scholarship/scholarship8.png",
+      "/images/projects/scholarship/scholarship9.png",
+      "/images/projects/scholarship/scholarship10.png",
+    ],
+    detail: {
+      client: "University Student (FYP)",
+      deliverables: [
+        "Full Stack Development",
+        "Role-Based Access Control",
+        "Application Workflow",
+        "Evaluation System",
+      ],
+      heading: "Simplifying scholarship distribution and evaluation",
+      body: [
+        "Developed a comprehensive Scholarship Management System as a freelance project for a university student's Final Year Project (FYP). The platform digitizes and streamlines the entire scholarship lifecycle through a robust three-tier architecture.",
+        "The system features distinct panels for Students, Admins, and Committee members. Students can easily browse available scholarships and submit applications. Admins oversee the platform, assign applications to committee members, and make final approval or rejection decisions based on the evaluation scores provided by the committee's thorough review process.",
+      ],
+    },
+  },
 ];

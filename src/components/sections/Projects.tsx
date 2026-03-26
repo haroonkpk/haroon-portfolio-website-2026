@@ -20,7 +20,11 @@ export default function Projects() {
   const go = useTransitionNavigate();
 
   return (
-    <section className="w-full max-w-[94rem]" id="projects" style={{ backgroundColor: "var(--color-cream)" }}>
+    <section
+      className="w-full max-w-[94rem]"
+      id="projects"
+      style={{ backgroundColor: "var(--color-cream)" }}
+    >
       {/* ── Section heading ── */}
       <div
         ref={headingRef}
@@ -68,7 +72,7 @@ export default function Projects() {
 
       {/* ── Project cards── */}
       <div className="w-full">
-        {PROJECTS.map((project, i) => (
+        {PROJECTS.slice(0, 4).map((project, i) => (
           <ProjectCard key={project.slug} project={project} index={i} />
         ))}
 
