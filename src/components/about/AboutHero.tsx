@@ -97,55 +97,6 @@ export default function AboutHero() {
             animate="visible"
             className="flex flex-wrap items-center gap-8 mt-4"
           >
-            <div className="flex flex-col gap-1">
-              <span
-                className="font-black"
-                style={{
-                  fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-                  color: "var(--color-text-inverse)",
-                  lineHeight: 1,
-                }}
-              >
-                2+
-              </span>
-              <span
-                className="text-xs uppercase"
-                style={{
-                  color: "var(--color-text-inverse-muted)",
-                  letterSpacing: "var(--tracking-wider)",
-                }}
-              >
-                Years exp.
-              </span>
-            </div>
-
-            <div
-              className="w-px h-10 self-center"
-              style={{ backgroundColor: "var(--color-border-dark)" }}
-            />
-
-            <div className="flex flex-col gap-1">
-              <span
-                className="font-black"
-                style={{
-                  fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-                  color: "var(--color-text-inverse)",
-                  lineHeight: 1,
-                }}
-              >
-                Pakistan
-              </span>
-              <span
-                className="text-xs uppercase"
-                style={{
-                  color: "var(--color-text-inverse-muted)",
-                  letterSpacing: "var(--tracking-wider)",
-                }}
-              >
-                Location
-              </span>
-            </div>
-
             <a
               href={CV_URL}
               download
