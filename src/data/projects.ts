@@ -17,7 +17,7 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  // smartprep
+  // smartprep 
   {
     slug: "smartprep",
     label: "AI / EdTech",
@@ -35,6 +35,7 @@ export const PROJECTS: Project[] = [
       client: "Virtual University Students",
       deliverables: ["Development", "UI", "UX", "AI Integration", "Backend"],
       heading: "Smarter studying for VU",
+      liveUrl:"smart-prep-vu.vercel.app",
       body: [
         "Built an AI-powered exam preparation platform for Virtual University students covering 30+ subjects, featuring an Exam Topic Predictor, Past Paper Analyzer, and PDF Study Assistant.",
         "Leveraged LangChain, Google Gemini, and Groq to deliver fast, intelligent responses, with Supabase (PostgreSQL) for scalable data storage and Next.js 16 for a blazing-fast frontend.",
