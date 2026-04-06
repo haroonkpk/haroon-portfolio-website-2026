@@ -62,6 +62,8 @@ export const PROJECTS: Project[] = [
       client: "Hakeem Amir Hashmi",
       deliverables: ["Frontend", "Backend", "CMS", "Content Management"],
       heading: "A blog as natural as the remedies",
+      liveUrl:"https://hashim-dawakhana.vercel.app/",
+      githubUrl:"https://github.com/haroonkpk/hashim-dawakhana",
       body: [
         "Designed and developed a clean, dynamic blogging platform for Hashim Dawakhana — a local herbal store — complete with a smart admin panel for managing articles, categories, and reorderable content blocks.",
         "Used SWR for real-time data fetching, Cloudinary for media management, and MongoDB for flexible content storage, all wrapped in a polished Next.js and TypeScript setup.",
@@ -92,6 +94,7 @@ export const PROJECTS: Project[] = [
         "Donation Tracking",
         "Admin Dashboard",
       ],
+      githubUrl:"https://github.com/haroonkpk/AGOSH_MANAGEMENT_SYSTEM",
       heading: "Streamlining global care and transparent donations",
       body: [
         "Developed a comprehensive management system for Agosh Care Center to bridge the gap between donors and beneficiaries. The platform is built on a robust role-based architecture supporting three distinct user types: Head Admins, Branch Admins, and Donors.",
@@ -127,6 +130,8 @@ export const PROJECTS: Project[] = [
         "UI/UX Implementation",
         "Responsive Design",
       ],
+      liveUrl:"https://www.alsabr-consulting.com/en",
+      githubUrl:"https://github.com/haroonkpk/alsabr-petro",
       heading: "Empowering the global energy future",
       body: [
         "Developed a professional corporate website for ALSABR-PETRO, a specialized oil and gas drilling engineering consulting firm based in Jeddah, Saudi Arabia. The platform showcases their expertise in well planning, performance optimization, and manpower supply.",
@@ -165,6 +170,7 @@ export const PROJECTS: Project[] = [
         "Application Workflow",
         "Evaluation System",
       ],
+      githubUrl:"https://github.com/haroonkpk/Scholarship-website",
       heading: "Simplifying scholarship distribution and evaluation",
       body: [
         "Developed a comprehensive Scholarship Management System as a freelance project for a university student's Final Year Project (FYP). The platform digitizes and streamlines the entire scholarship lifecycle through a robust three-tier architecture.",
