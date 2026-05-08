@@ -17,6 +17,41 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
+  // luckyFactoDistribution
+  {
+    slug: "lucky-facto-distribution",
+    label: "Distribution / Inventory",
+    title: "Cement distribution & inventory management system for a local distributor",
+    origin: "Agency",
+
+    images: [
+      "/images/projects/lucky-facto-distribution/lucky-facto-distribution1.png",
+      "/images/projects/lucky-facto-distribution/lucky-facto-distribution.png",
+      "/images/projects/lucky-facto-distribution/lucky-facto-distribution2.png",
+      "/images/projects/lucky-facto-distribution/lucky-facto-distribution3.png",
+      "/images/projects/lucky-facto-distribution/lucky-facto-distribution4.png",
+      "/images/projects/lucky-facto-distribution/lucky-facto-distribution5.png",
+      "/images/projects/lucky-facto-distribution/lucky-facto-distribution7.png",
+      "/images/projects/lucky-facto-distribution/Screenshot From 2026-05-08 07-03-05.png",
+    ],
+    detail: {
+      client: "Local Cement Distributor",
+      deliverables: [
+        "Full Stack Development",
+        "Role-Based Access Control",
+        "Inventory Management",
+        "Payment Tracking",
+        "Distribution Workflow",
+      ],
+      githubUrl: "https://github.com/haroonkpk/lucky-facto-distribution",
+      heading: "Streamlining cement distribution from factory to shop",
+      body: [
+        "Developed a comprehensive distribution management system for a local cement distributor handling Lucky and Facto cement brands. The platform tracks the full lifecycle — from factory intake to shop-level distribution — with real-time inventory, payment tracking, and performance analytics across multiple regions.",
+        "The system features two distinct roles: an Owner dashboard with full visibility over salesmen, shops, ledgers, receipts, and performance metrics including sales vs. payments trends and regional breakdowns; and a Salesman dashboard for managing daily operations like stock intake, shop distribution entries, payment collection, and monitoring pending tasks.",
+      ],
+    },
+  },
+
   // smartprep 
   {
     slug: "smartprep",
