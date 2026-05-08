@@ -6,8 +6,8 @@ import { motion, useScroll, useTransform, Variants } from "framer-motion";
 const WHO = "Who I am";
 const PARAGRAPHS = [
   "Hi, I'm Haroon — a Web Developer with 2 years of experience in MERN Stack and Next.js.",
-  "When a client needed smooth full-page scrolling with custom animations, no existing library did the job right. So I built a custom scrolling engine with the help of AI that was stable, smooth, and exactly what was needed.",
-  "I also built a SaaS for VU students that compresses 1 hour of exam preparation into under 10 minutes — because good software should save time, not waste it.",
+  "I don't chase pixel-perfect flashiness — I chase stability. My priority is writing code that scales cleanly, stays maintainable over time, and makes life easier for every developer who touches it next.",
+  "A stable, well-structured codebase will always outperform a pretty one that breaks under pressure. That mindset drives every architecture decision I make — from folder structure to state management.",
   "Currently on contract at Apptek1, and open to new opportunities.",
 ];
 const CV_URL = "/Muhammad_Haroon_Resume_2026.pdf";
