@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
         "Payment Tracking",
         "Distribution Workflow",
       ],
-      githubUrl: "https://github.com/haroonkpk/lucky-facto-distribution",
+      githubUrl: "https://github.com/haroonkpk/lucky_facto",
       liveUrl: "https://lucky-facto-distribution.vercel.app",
       heading: "Streamlining cement distribution from factory to shop",
       body: [
