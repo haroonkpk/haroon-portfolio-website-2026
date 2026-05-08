@@ -44,12 +44,16 @@ export const PROJECTS: Project[] = [
         "Distribution Workflow",
       ],
       githubUrl: "https://github.com/haroonkpk/lucky-facto-distribution",
+      liveUrl: "https://lucky-facto-distribution.vercel.app",
       heading: "Streamlining cement distribution from factory to shop",
       body: [
         "Developed a comprehensive distribution management system for a local cement distributor handling Lucky and Facto cement brands. The platform tracks the full lifecycle — from factory intake to shop-level distribution — with real-time inventory, payment tracking, and performance analytics across multiple regions.",
         "The system features two distinct roles: an Owner dashboard with full visibility over salesmen, shops, ledgers, receipts, and performance metrics including sales vs. payments trends and regional breakdowns; and a Salesman dashboard for managing daily operations like stock intake, shop distribution entries, payment collection, and monitoring pending tasks.",
+        "To test the live application with the testing database, you can use the following credentials:",
+        "Owner Role: Email: owner@gmail.com | Password: 123456",
+        "Salesman Role: Email: saleman@gmail.com | Password: 123456",
       ],
-    },
+    }, 
   },
 
   // smartprep 
