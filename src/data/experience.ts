@@ -14,7 +14,7 @@ export const EXPERIENCES = [
     stat: "02",
   },
   {
-    type: "Full Time",
+    type: "Freelance based",
     company: "Apptek1",
     logo: "/images/apptek1.webp",
     period: "2025 — Present",
