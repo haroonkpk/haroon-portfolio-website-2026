@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
         "Distribution Workflow",
       ],
       githubUrl: "https://github.com/haroonkpk/lucky_facto",
-      liveUrl: "https://lucky-facto-distribution.vercel.app",
+      liveUrl: "https://lucky-facto.vercel.app",
       heading: "Streamlining cement distribution from factory to shop",
       body: [
         "Developed a comprehensive distribution management system for a local cement distributor handling Lucky and Facto cement brands. The platform tracks the full lifecycle — from factory intake to shop-level distribution — with real-time inventory, payment tracking, and performance analytics across multiple regions.",
