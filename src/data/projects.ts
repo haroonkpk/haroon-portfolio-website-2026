@@ -17,6 +17,57 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    slug: "restaurant-management-system",
+    label: "Restaurant / Operations",
+    title: "Restaurant Management System",
+    origin: "Freelance",
+
+    images: [
+      "/images/projects/restaurant_management_system/1.png",
+      "/images/projects/restaurant_management_system/22.png",
+        "/images/projects/restaurant_management_system/14.png",
+      "/images/projects/restaurant_management_system/3.png",
+      "/images/projects/restaurant_management_system/4.png",
+      "/images/projects/restaurant_management_system/5.png",
+      "/images/projects/restaurant_management_system/6.png",
+      "/images/projects/restaurant_management_system/7.png",
+      "/images/projects/restaurant_management_system/8.png",
+      "/images/projects/restaurant_management_system/9.png",
+      "/images/projects/restaurant_management_system/10.png",
+      "/images/projects/restaurant_management_system/11.png",
+      "/images/projects/restaurant_management_system/12.png",
+      "/images/projects/restaurant_management_system/13.png",
+      "/images/projects/restaurant_management_system/14.png",
+      "/images/projects/restaurant_management_system/15.png",
+      "/images/projects/restaurant_management_system/16.png",
+      "/images/projects/restaurant_management_system/17.png",
+      "/images/projects/restaurant_management_system/18.png",
+      "/images/projects/restaurant_management_system/19.png",
+      "/images/projects/restaurant_management_system/20.png",
+      "/images/projects/restaurant_management_system/21.png",
+    ],
+    detail: {
+      client: "Freelance Project",
+      deliverables: [
+        "Point of Sale",
+        "Kitchen Order Tracking",
+        "Inventory Management",
+        "Customer Accounts",
+        "Employee & Payroll Management",
+        "Business Reporting",
+      ],
+      githubUrl:
+        "https://github.com/haroonkpk/restaurant_management_system",
+      heading: "One system for the restaurant's daily operations",
+      body: [
+        "Built as a freelance project, this full-stack platform brings front-of-house and back-of-house workflows together in one place. Restaurant teams can manage sales, kitchen progress, stock, customer accounts, staff, and finances from a shared operations system.",
+        "The point-of-sale workflow supports order creation, billing, payments, and printable receipts, while a live kitchen view helps staff follow orders through preparation. Menu and inventory tools track pricing, stock movements, and low-stock items; customer ledgers keep payments and outstanding balances easy to follow.",
+        "Owner, Admin, Cashier, and Chef roles receive access suited to their responsibilities. The system also brings together attendance, payroll and salary advances, expense tracking, and business reports. It is built with Next.js, Prisma, and PostgreSQL, with Supabase powering realtime updates.",
+      ],
+    },
+  },
+
   // luckyFactoDistribution
   {
     slug: "lucky-facto-distribution",
