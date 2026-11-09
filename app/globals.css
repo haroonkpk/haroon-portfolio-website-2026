@@ -6,8 +6,8 @@
   --color-black: #0f0f0f;
   --color-black-soft: #1a1a1a;
   --color-white: #ffffff;
-  --color-cream: #f5f0e8;
-  --color-cream-dark: #e8e4dc;
+  --color-cream: #ffffff;
+  --color-cream-dark: #ffffff;
 
   /* --- Gray Scale --- */
   --color-gray-light: #f0ede6;
@@ -18,11 +18,11 @@
   --color-text-primary: #0f0f0f;
   --color-text-secondary: #1a1a1a;
   --color-text-muted: #8a8a8a;
-  --color-text-inverse: #f5f0e8;
+  --color-text-inverse: #ffffff;
   --color-text-inverse-muted: #c4bfb5;
 
   /* --- Background Colors --- */
-  --color-bg-primary: #f5f0e8;
+  --color-bg-primary: #fffffe;
   --color-bg-dark: #0f0f0f;
   --color-bg-card: #ffffff;
   --color-bg-card-dark: #1a1a1a;

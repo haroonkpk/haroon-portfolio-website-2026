@@ -38,7 +38,6 @@ export const PROJECTS: Project[] = [
       "/images/projects/restaurant_management_system/11.png",
       "/images/projects/restaurant_management_system/12.png",
       "/images/projects/restaurant_management_system/13.png",
-      "/images/projects/restaurant_management_system/14.png",
       "/images/projects/restaurant_management_system/15.png",
       "/images/projects/restaurant_management_system/16.png",
       "/images/projects/restaurant_management_system/17.png",
